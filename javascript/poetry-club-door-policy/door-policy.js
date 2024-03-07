@@ -49,8 +49,7 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  let trimmedLine = line.trim();
-  return trimmedLine[trimmedLine.length - 1];
+return line.trim().slice(-1);
 }
 
 /**
