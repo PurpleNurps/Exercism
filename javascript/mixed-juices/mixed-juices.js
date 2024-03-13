@@ -11,19 +11,20 @@
  * @returns {number} time in minutes
  */
 export function timeToMixJuice(name) {
-  switch (name) {
-    case 'Pure Strawberry Joy':
-      return 0.5;
-    case 'Energizer':
-    case 'Green Garden':
-      return 1.5;
-    case 'Tropical Island':
-      return 3;
-    case 'All or Nothing':
-      return 5;
-    default:
-      return 2.5;
-  }
+  // switch (name) {
+  //   case 'Pure Strawberry Joy':
+  //     return 0.5;
+  //   case 'Energizer':
+  //   case 'Green Garden':
+  //     return 1.5;
+  //   case 'Tropical Island':
+  //     return 3;
+  //   case 'All or Nothing':
+  //     return 5;
+  //   default:
+  //     return 2.5;
+  // }
+  return name === 'Pure Strawberry Joy' ? 0.5 : name === 'Energizer' || name === 'Green Garden' ? 1.5 : name === 'Tropical Island' ? 3 : name === 'All or Nothing' ? 5 : 2.5;
 }
 
 /**
