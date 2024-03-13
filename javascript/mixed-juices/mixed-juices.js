@@ -24,7 +24,20 @@ export function timeToMixJuice(name) {
   //   default:
   //     return 2.5;
   // }
-  return name === 'Pure Strawberry Joy' ? 0.5 : name === 'Energizer' || name === 'Green Garden' ? 1.5 : name === 'Tropical Island' ? 3 : name === 'All or Nothing' ? 5 : 2.5;
+  // return name === 'Pure Strawberry Joy' ? 0.5 : name === 'Energizer' || name === 'Green Garden' ? 1.5 : name === 'Tropical Island' ? 3 : name === 'All or Nothing' ? 5 : 2.5;
+  const prepTime = {
+    'Pure Strawberry Joy': 0.5,
+    'Energizer': 1.5,
+    'Green Garden': 1.5,
+    'Tropical Island': 3,
+    'All or Nothing': 5
+  }
+
+  if (Object.keys(prepTime).includes(name)) {
+    return prepTime[name]
+  } else {
+    return 2.5;
+  }
 }
 
 /**
