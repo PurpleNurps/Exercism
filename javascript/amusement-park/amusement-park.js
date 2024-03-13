@@ -33,13 +33,24 @@ export function revokeTicket(visitor) {
  */
 export function ticketStatus(tickets, ticketId) {
 
-    if (tickets[ticketId] === null) {
-      return 'not sold';
-    } else if (tickets[ticketId] === undefined) {
+    // if (tickets[ticketId] === null) {
+    //   return 'not sold';
+    // } else if (tickets[ticketId] === undefined) {
+    //   return 'unknown ticket id';
+    // } else {
+    //   return `sold to ${tickets[ticketId]}`
+  // }
+  
+  const name = tickets[ticketId];
+
+  switch (name) {
+    case undefined:
       return 'unknown ticket id';
-    } else {
-      return `sold to ${tickets[ticketId]}`
-    }
+    case null:
+      return 'not sold';
+    default:
+      return `sold to ${name}`
+  }
   };
 
 /**
