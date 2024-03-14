@@ -19,16 +19,17 @@ export function twoSum(array1, array2) {
  */
 export function luckyNumber(value) {
   //  change value to a string and check if value[i] is equal to value.length - i;
-  const stringValue = String(value);
-  let result = false;
-  for (let i = 0; i < stringValue.length / 2; i++) {
-    if (stringValue[i] === stringValue[stringValue.length - 1 - i]) {
-      result = true;
-    } else {
-      result = false;
-    }
-  }
-  return result;
+  // const stringValue = String(value);
+  // let result = false;
+  // for (let i = 0; i < stringValue.length / 2; i++) {
+  //   if (stringValue[i] === stringValue[stringValue.length - 1 - i]) {
+  //     result = true;
+  //   } else {
+  //     result = false;
+  //   }
+  // }
+  // return result;
+  return String(value) === [...String(value)].reverse().join('');
 }
 
 /**
