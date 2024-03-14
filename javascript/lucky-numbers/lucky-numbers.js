@@ -18,7 +18,17 @@ export function twoSum(array1, array2) {
  * @returns {boolean} whether the number is a palindrome or not
  */
 export function luckyNumber(value) {
-  throw new Error('Implement the luckyNumber function');
+  //  change value to a string and check if value[i] is equal to value.length - i;
+  const stringValue = String(value);
+  let result = false;
+  for (let i = 0; i < stringValue.length / 2; i++) {
+    if (stringValue[i] === stringValue[stringValue.length - 1 - i]) {
+      result = true;
+    } else {
+      result = false;
+    }
+  }
+  return result;
 }
 
 /**
@@ -29,5 +39,14 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  throw new Error('Implement the errorMessage function');
+  // if (!input) {
+  //   return 'Required field'
+  // }
+
+  // if (Number(input)) {
+  //   return '';
+  // } else if (!Number(input)) {
+  //   return 'Must be a number besides 0';
+  // }
+  return !input ? 'Required field' : Number(input) ? '' : 'Must be a number besides 0';
 }
